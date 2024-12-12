@@ -1,0 +1,212 @@
+{
+    "name": "github rest api",
+    "version": "1",
+    "items": [
+      {
+        "type": "folder",
+        "name": "Repository",
+        "items": [
+          {
+            "type": "http",
+            "name": "Repository Info",
+            "seq": 2,
+            "request": {
+              "url": "{{baseUrl}}/repos/usebruno/bruno",
+              "method": "GET",
+              "headers": [],
+              "params": [],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          },
+          {
+            "type": "http",
+            "name": "Repository Tags",
+            "seq": 3,
+            "request": {
+              "url": "{{baseUrl}}/repos/usebruno/bruno/tags",
+              "method": "GET",
+              "headers": [],
+              "params": [],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          },
+          {
+            "type": "http",
+            "name": "Search Issues",
+            "seq": 4,
+            "request": {
+              "url": "{{baseUrl}}/search/issues?q=is:issue%20repo:usebruno/bruno",
+              "method": "GET",
+              "headers": [],
+              "params": [
+                {
+                  "name": "q",
+                  "value": "is:issue repo:usebruno/bruno",
+                  "type": "query",
+                  "enabled": true
+                }
+              ],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          },
+          {
+            "type": "http",
+            "name": "Search Repos",
+            "seq": 1,
+            "request": {
+              "url": "{{baseUrl}}/search/repositories?q=react&order=desc&per_page=10",
+              "method": "GET",
+              "headers": [],
+              "params": [
+                {
+                  "name": "q",
+                  "value": "react",
+                  "type": "query",
+                  "enabled": true
+                },
+                {
+                  "name": "order",
+                  "value": "desc",
+                  "type": "query",
+                  "enabled": true
+                },
+                {
+                  "name": "per_page",
+                  "value": "10",
+                  "type": "query",
+                  "enabled": true
+                }
+              ],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "User",
+        "items": [
+          {
+            "type": "http",
+            "name": "User Info",
+            "seq": 1,
+            "request": {
+              "url": "{{baseUrl}}/users/usebruno",
+              "method": "GET",
+              "headers": [],
+              "params": [],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "test(\"status must be 200\", function() {\n  expect(res.status).to.eql(201);\n});",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          },
+          {
+            "type": "http",
+            "name": "User Repos",
+            "seq": 2,
+            "request": {
+              "url": "{{baseUrl}}/users/usebruno/repos",
+              "method": "GET",
+              "headers": [],
+              "params": [],
+              "body": {
+                "mode": "none",
+                "formUrlEncoded": [],
+                "multipartForm": []
+              },
+              "script": {},
+              "vars": {},
+              "assertions": [],
+              "tests": "",
+              "docs": "",
+              "auth": {
+                "mode": "none"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "activeEnvironmentUid": "o8X9FO6abq4UxfrsI0r0z",
+    "environments": [
+      {
+        "variables": [
+          {
+            "name": "baseUrl",
+            "value": "https://api.github.com",
+            "enabled": true,
+            "secret": false,
+            "type": "text"
+          }
+        ],
+        "name": "Github"
+      }
+    ],
+    "brunoConfig": {
+      "version": "1",
+      "name": "github rest api",
+      "type": "collection",
+      "ignore": [
+        "node_modules",
+        ".git"
+      ]
+    }
+  }
